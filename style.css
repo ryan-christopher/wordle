@@ -3,6 +3,9 @@ html{
     color:white;
     font-family: 'Quicksand', sans-serif;
 }
+body{
+    margin:0;
+}
 
 h1{
     text-align: center;
