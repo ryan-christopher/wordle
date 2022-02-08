@@ -60,7 +60,7 @@ function checkLetters(){
             console.log("Checking!");
             for (let i = 1; i < 6; i++) {
                 var tile = document.getElementById(`${guesses}-${i}`);
-                tile.classList.add("turn-green")
+                tile.classList.add("turn-green");
             }
             guesses += 1;
             currentWord = "";
