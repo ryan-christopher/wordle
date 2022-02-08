@@ -78,5 +78,6 @@ div.spot{
     .key{
         font-size:11px;
         transition: all 0s;
+        background-color:red;
     }
 }
