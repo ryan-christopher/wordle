@@ -1,0 +1,68 @@
+html{
+    background-color:rgb(25, 25, 25);
+    color:white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+}
+
+div.guess-row{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+div.spot{
+    width:55px;
+    height:55px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 3px;
+    border: 1px solid gray;
+    margin: 3px 3px;
+}
+
+#keyboard{
+    margin-top: 10vh;
+}
+
+#keyboard>#keys-row1, #keys-row2, #keys-row3{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.key{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    background-color:rgb(100, 100, 100);
+    color:white;
+    border:1px solid white;
+    border-radius: 5px;
+    width:43px;
+    height:58px;
+    margin:4px;
+    transition: all 0.3s;
+}
+
+.key:hover{
+    transform: scale(1.25);
+    transition: all 0.3s;
+}
+
+.key:active{
+    background-color:rgb(32, 32, 32);
+    transition: all 0s;
+}
+
+.wide{
+    width:68px;
+}

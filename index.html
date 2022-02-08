@@ -4,10 +4,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan's Wordle</title>
+    <title>Wordle</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"> 
+    <link rel="shortcut icon" href="square.png" type="image/x-icon">
 </head>
 <body>
+
+    <h1>Wordle</h1>
+
+
+    <div id="guesses">
+        <div id="guess-row1" class="guess-row">
+            <div id="1-1" class="spot"></div>
+            <div id="1-2" class="spot"></div>
+            <div id="1-3" class="spot"></div>
+            <div id="1-4" class="spot"></div>
+            <div id="1-5" class="spot"></div>
+        </div>
+        <div id="guess-row2" class="guess-row">
+            <div id="2-1" class="spot"></div>
+            <div id="2-2" class="spot"></div>
+            <div id="2-3" class="spot"></div>
+            <div id="2-4" class="spot"></div>
+            <div id="2-5" class="spot"></div>
+        </div>
+        <div id="guess-row3" class="guess-row">
+            <div id="3-1" class="spot"></div>
+            <div id="3-2" class="spot"></div>
+            <div id="3-3" class="spot"></div>
+            <div id="3-4" class="spot"></div>
+            <div id="3-5" class="spot"></div>
+        </div>
+        <div id="guess-row4" class="guess-row">
+            <div id="4-1" class="spot"></div>
+            <div id="4-2" class="spot"></div>
+            <div id="4-3" class="spot"></div>
+            <div id="4-4" class="spot"></div>
+            <div id="4-5" class="spot"></div>
+        </div>
+        <div id="guess-row5" class="guess-row">
+            <div id="5-1" class="spot"></div>
+            <div id="5-2" class="spot"></div>
+            <div id="5-3" class="spot"></div>
+            <div id="5-4" class="spot"></div>
+            <div id="5-5" class="spot"></div>
+        </div>
+        <div id="guess-row6" class="guess-row">
+            <div id="6-1" class="spot"></div>
+            <div id="6-2" class="spot"></div>
+            <div id="6-3" class="spot"></div>
+            <div id="6-4" class="spot"></div>
+            <div id="6-5" class="spot"></div>
+        </div>
+    </div>
+
+
+    <div id="keyboard">
+        <div id="keys-row1">
+            <button class="key" onclick="enterLetter('q')">Q</button>
+            <button class="key" onclick="enterLetter('w')">W</button>
+            <button class="key" onclick="enterLetter('e')">E</button>
+            <button class="key" onclick="enterLetter('r')">R</button>
+            <button class="key" onclick="enterLetter('t')">T</button>
+            <button class="key" onclick="enterLetter('y')">Y</button>
+            <button class="key" onclick="enterLetter('u')">U</button>
+            <button class="key" onclick="enterLetter('i')">I</button>
+            <button class="key" onclick="enterLetter('o')">O</button>
+            <button class="key" onclick="enterLetter('p')">P</button>
+        </div>
+        <div id="keys-row2">
+            <button class="key" onclick="enterLetter('a')">A</button>
+            <button class="key" onclick="enterLetter('s')">S</button>
+            <button class="key" onclick="enterLetter('d')">D</button>
+            <button class="key" onclick="enterLetter('f')">F</button>
+            <button class="key" onclick="enterLetter('g')">G</button>
+            <button class="key" onclick="enterLetter('h')">H</button>
+            <button class="key" onclick="enterLetter('j')">J</button>
+            <button class="key" onclick="enterLetter('k')">K</button>
+            <button class="key" onclick="enterLetter('l')">L</button>
+        </div>
+        <div id="keys-row3">
+            <button class="key wide" onclick="checkLetters()">Enter</button>
+            <button class="key" onclick="enterLetter('z')">Z</button>
+            <button class="key" onclick="enterLetter('x')">X</button>
+            <button class="key" onclick="enterLetter('c')">C</button>
+            <button class="key" onclick="enterLetter('v')">V</button>
+            <button class="key" onclick="enterLetter('b')">B</button>
+            <button class="key" onclick="enterLetter('n')">N</button>
+            <button class="key" onclick="enterLetter('m')">M</button>
+            <button class="key wide" onclick="removeLetter()">Back</button>
+        </div>
+    </div>
     
 
     <script src="script.js"></script>
