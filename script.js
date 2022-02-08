@@ -28,17 +28,11 @@ function getRandomWord(){
     console.log(word);
 }
 
-
-//readTextFile("words.txt");
-
-guesses = 1;
-currentWord = "";
-
 function enterLetter(key){
     if (currentWord.length < 5) {
         currentWord += key;
         console.log(currentWord);
-        var letterspot = document.getElementById(`${guesses}-${currentWord.length}`)
+        letterspot = document.getElementById(`${guesses}-${currentWord.length}`)
         letterspot.innerHTML = key;
     }
 }
@@ -58,9 +52,24 @@ function removeLetter(){
 }
 
 function checkLetters(){
-    console.log("Checking!");
-    guesses += 1;
-    currentWord = "";
+    if (currentWord.length === 5){
+        if (!words.includes(currentWord)){
+            alert("That word is not in this dictionary.")
+        }
+        else{
+            console.log("Checking!");
+            for (let i = 1; i < 6; i++) {
+                var tile = document.getElementById(`${guesses}-${i}`);
+                tile.classList.add("turn-green")
+            }
+            guesses += 1;
+            currentWord = "";
+        }
+    }
+    else{
+        alert("You need a five letter word.")
+    }
+
 }
 
 keyboard_input = (event) => {
@@ -76,3 +85,6 @@ keyboard_input = (event) => {
 }
 
 addEventListener("keydown", keyboard_input);
+readTextFile("words.txt");
+guesses = 1;
+currentWord = "";

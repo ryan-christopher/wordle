@@ -34,7 +34,6 @@ div.spot{
 
 #keyboard{
     margin-top: 10vh;
-    overflow-x:hidden;
 }
 
 #keyboard>#keys-row1, #keys-row2, #keys-row3{
@@ -66,17 +65,24 @@ div.spot{
     width:68px;
 }
 
-@media only screen and (min-width:450px){
+@media only screen and (min-width:451px){
     .key:hover{
         transform: scale(1.25);
         transition: all 0.3s;
     }
 }
 
-
 @media only screen and (max-width:450px){
+    #keyboard{
+        margin-top: 3vh;
+        overflow-x:hidden;
+    }
     .key{
         font-size:11px;
         transition: all 0s;
     }
+}
+
+div.turn-green{
+    background-color:rgb(16, 105, 16);
 }
