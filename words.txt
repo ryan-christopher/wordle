@@ -881,7 +881,6 @@ tasks
 seams
 coral
 focus
-naked
 puppy
 jumps
 spoil
@@ -1015,8 +1014,6 @@ molds
 yarns
 liver
 gauge
-breed
-stool
 gulls
 awoke
 gross
@@ -1167,7 +1164,6 @@ crest
 elder
 kills
 yeast
-erect
 bugle
 medal
 roles
@@ -1375,7 +1371,6 @@ speck
 hymns
 hints
 drown
-bosom
 slick
 quest
 coils
@@ -1720,7 +1715,6 @@ argon
 nudge
 skiff
 amber
-sexes
 rouse
 salts
 hitch
@@ -2230,7 +2224,6 @@ goody
 gazes
 dowel
 calms
-bitch
 scowl
 gulps
 coded
@@ -2267,7 +2260,6 @@ twain
 clink
 scamp
 pawed
-grope
 bravo
 gable
 stink
@@ -2277,7 +2269,6 @@ rarer
 regal
 wards
 fawns
-babes
 unify
 amend
 oaken
@@ -2702,7 +2693,6 @@ perky
 mooed
 frill
 dines
-booze
 tripe
 prong
 drips
@@ -2826,7 +2816,6 @@ karat
 jolts
 peons
 beers
-horny
 pales
 wreak
 lairs
@@ -3007,7 +2996,6 @@ pawns
 tamer
 poach
 baits
-damns
 gumbo
 daunt
 prank
@@ -3478,7 +3466,6 @@ yella
 aglow
 glean
 gusto
-hymen
 ethos
 terra
 brash
@@ -3521,7 +3508,6 @@ aloes
 louis
 quint
 clunk
-raped
 salvo
 diode
 matey
@@ -3710,7 +3696,6 @@ looky
 melee
 huffy
 loamy
-pimps
 titan
 binge
 shunt
@@ -3903,7 +3888,6 @@ gibes
 aural
 tempi
 hooch
-rapes
 snuck
 harts
 techs
@@ -4064,7 +4048,6 @@ gamed
 flume
 axman
 doozy
-lubes
 rheas
 bozos
 butyl
@@ -4111,7 +4094,6 @@ nisei
 neato
 decaf
 softy
-bimbo
 adlib
 loony
 shoed
@@ -4160,8 +4142,6 @@ mimed
 melds
 boffo
 debit
-pinup
-vagus
 gulag
 randy
 bosun
@@ -4234,7 +4214,6 @@ sully
 sooth
 gelds
 ahold
-raper
 pager
 fixer
 infix
@@ -4910,7 +4889,6 @@ diems
 ginny
 degum
 polos
-desex
 unman
 dungy
 vitam
@@ -5674,7 +5652,6 @@ molas
 cirri
 huzza
 agone
-unsex
 unwon
 peats
 toile

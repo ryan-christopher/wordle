@@ -1,5 +1,8 @@
 var words = []
 var letterspot;
+var word;
+var tile;
+var answerWord;
 
 function readTextFile(file){
     var rawFile = new XMLHttpRequest();
@@ -14,6 +17,7 @@ function readTextFile(file){
     }
     rawFile.send(null);
 }
+readTextFile("words.txt");
 
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
@@ -24,14 +28,14 @@ function getRandomIntInclusive(min, max) {
 
 function getRandomWord(){
     wordValue = getRandomIntInclusive(0, words.length - 1);
-    var word = words[wordValue];
+    word = words[wordValue];
     console.log(word);
+    answerWord = word;
 }
 
 function enterLetter(key){
     if (currentWord.length < 5) {
         currentWord += key;
-        console.log(currentWord);
         letterspot = document.getElementById(`${guesses}-${currentWord.length}`)
         letterspot.innerHTML = key;
     }
@@ -48,19 +52,26 @@ function removeLetter(){
         letterspot.innerHTML = "";
         currentWord = "";
     }
-    console.log(currentWord);
 }
 
 function checkLetters(){
     if (currentWord.length === 5){
         if (!words.includes(currentWord)){
-            alert("That word is not in this dictionary.")
+            alert("That word is not in this dictionary, enter a valid word.")
         }
         else{
-            console.log("Checking!");
             for (let i = 1; i < 6; i++) {
-                var tile = document.getElementById(`${guesses}-${i}`);
-                tile.classList.add("turn-green");
+                tile = document.getElementById(`${guesses}-${i}`);
+                if (answerWord.includes(currentWord[i-1]) && answerWord[i-1]===currentWord[i-1]){
+                    tile.classList.add("turn-green");
+                }
+                else if (answerWord.includes(currentWord[i-1]) && answerWord[i-1]!=currentWord[i-1]){
+                    tile.classList.add("turn-yellow");
+                }
+                else{
+                    tile.classList.add("turn-black");
+                }
+                
             }
             guesses += 1;
             currentWord = "";
@@ -85,6 +96,8 @@ keyboard_input = (event) => {
 }
 
 addEventListener("keydown", keyboard_input);
-readTextFile("words.txt");
+
 guesses = 1;
 currentWord = "";
+
+setTimeout((answerWord = getRandomWord()) => {}, 50);

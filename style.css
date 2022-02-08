@@ -84,7 +84,6 @@ div.spot{
 }
 
 div.turn-green{
-    background-color:rgb(16, 105, 16);
     transition: all 0.5s;
 }
 
@@ -92,38 +91,40 @@ div.turn-green:nth-child(n+1){
     animation-name: turn-green-anim;
     animation-duration: 1s;
     animation-delay: 0s;
+    background-color:rgb(16, 105, 16);
+    transition-delay: 0.4s;
 }
 
 div.turn-green:nth-child(n+2){
-    transition-delay: 0.9s;
-    transition-property: background-color 0.5s;
     animation-name: turn-green-anim;
     animation-duration: 1s;
     animation-delay: 0.4s;
+    background-color:rgb(16, 105, 16);
+    transition-delay: 0.8s;
 }
 
 div.turn-green:nth-child(n+3){
-    transition-delay: 1.3s;
-    transition-property: background-color 0.5s;
     animation-name: turn-green-anim;
     animation-duration: 1s;
     animation-delay: 0.8s;
+    background-color:rgb(16, 105, 16);
+    transition-delay: 1.2s;
 }
 
 div.turn-green:nth-child(n+4){
-    transition-delay: 1.7s;
-    transition-property: background-color 0.5s;
     animation-name: turn-green-anim;
     animation-duration: 1s;
     animation-delay: 1.2s;
+    background-color:rgb(16, 105, 16);
+    transition-delay: 1.6s;
 }
 
 div.turn-green:nth-child(n+5){
-    transition-delay: 2.1s;
-    transition-property: background-color 0.5s;
     animation-name: turn-green-anim;
     animation-duration: 1s;
     animation-delay: 1.6s;
+    background-color:rgb(16, 105, 16);
+    transition-delay: 2s;
 }
 
 @keyframes turn-green-anim{
@@ -140,3 +141,122 @@ div.turn-green:nth-child(n+5){
         background-color:rgb(16, 105, 16);
     }
   }
+
+div.turn-yellow{
+    transition: all 0.5s;
+}
+
+div.turn-yellow:nth-child(n+1){
+    animation-name: turn-yellow-anim;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    background-color:rgb(121, 134, 48);
+    transition-delay: 0.4s;
+}
+
+div.turn-yellow:nth-child(n+2){
+    animation-name: turn-yellow-anim;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    background-color:rgb(121, 134, 48);
+    transition-delay: 0.8s;
+}
+
+div.turn-yellow:nth-child(n+3){
+    animation-name: turn-yellow-anim;
+    animation-duration: 1s;
+    animation-delay: 0.8s;
+    background-color:rgb(121, 134, 48);
+    transition-delay: 1.2s;
+}
+
+div.turn-yellow:nth-child(n+4){
+    animation-name: turn-yellow-anim;
+    animation-duration: 1s;
+    animation-delay: 1.2s;
+    background-color:rgb(121, 134, 48);
+    transition-delay: 1.6s;
+}
+
+div.turn-yellow:nth-child(n+5){
+    animation-name: turn-yellow-anim;
+    animation-duration: 1s;
+    animation-delay: 1.6s;
+    background-color:rgb(121, 134, 48);
+    transition-delay: 2s;
+}
+
+@keyframes turn-yellow-anim{
+    0%{
+        transform: rotateX(0deg);
+        background-color: black;
+    }
+    50%{
+        transform: rotateX(90deg);
+        background-color: black;
+    }
+    100%{
+        transform: rotateX(0deg);
+        background-color:rgb(121, 134, 48);
+    }
+  }
+
+div.turn-black{
+    transition: all 0.5s;
+}
+
+div.turn-black:nth-child(n+1){
+    animation-name: turn-black-anim;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    background-color:black;
+    transition-delay: 0.4s;
+}
+
+div.turn-black:nth-child(n+2){
+    animation-name: turn-black-anim;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    background-color:black;
+    transition-delay: 0.8s;
+}
+
+div.turn-black:nth-child(n+3){
+    animation-name: turn-black-anim;
+    animation-duration: 1s;
+    animation-delay: 0.8s;
+    background-color:black;
+    transition-delay: 1.2s;
+}
+
+div.turn-black:nth-child(n+4){
+    animation-name: turn-black-anim;
+    animation-duration: 1s;
+    animation-delay: 1.2s;
+    background-color:black;
+    transition-delay: 1.6s;
+}
+
+div.turn-black:nth-child(n+5){
+    animation-name: turn-black-anim;
+    animation-duration: 1s;
+    animation-delay: 1.6s;
+    background-color:black;
+    transition-delay: 2s;
+}
+
+@keyframes turn-black-anim{
+    0%{
+        transform: rotateX(0deg);
+        background-color: black;
+    }
+    50%{
+        transform: rotateX(90deg);
+        background-color: black;
+    }
+    100%{
+        transform: rotateX(0deg);
+        background-color:black;
+    }
+  }
+
