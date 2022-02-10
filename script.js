@@ -3,6 +3,11 @@ var letterspot;
 var word;
 var tile;
 var answerWord;
+var keyboardLetter;
+var gameOver = false;
+var remarks = ["You're too smart!", "Most impressive...", "How intelligent.",
+                "Nicely done!", "Not bad.", "Phew..."];
+var remark;
 
 function readTextFile(file){
     var rawFile = new XMLHttpRequest();
@@ -60,21 +65,34 @@ function checkLetters(){
             alert("That word is not in this dictionary, enter a valid word.")
         }
         else{
+            if (currentWord === answerWord) {
+                remark = remarks[guesses-1];
+                setTimeout(() => {alert(remark)}, 1500);
+                gameOver = true;
+            }
             for (let i = 1; i < 6; i++) {
                 tile = document.getElementById(`${guesses}-${i}`);
+                keyboardLetter = document.getElementById(`${currentWord[i-1]}`);
                 if (answerWord.includes(currentWord[i-1]) && answerWord[i-1]===currentWord[i-1]){
                     tile.classList.add("turn-green");
+                    keyboardLetter.style.backgroundColor="green";
                 }
                 else if (answerWord.includes(currentWord[i-1]) && answerWord[i-1]!=currentWord[i-1]){
                     tile.classList.add("turn-yellow");
+                    keyboardLetter.style.backgroundColor="rgb(177, 174, 31)";
                 }
                 else{
                     tile.classList.add("turn-black");
+                    keyboardLetter.style.backgroundColor="black";
                 }
                 
             }
             guesses += 1;
             currentWord = "";
+            if (guesses === 7 && gameOver === false){
+                setTimeout(() => {alert(`${answerWord} \nBetter luck next time.`)}, 1500);
+                gameOver = true;
+            }
         }
     }
     else{
@@ -84,14 +102,16 @@ function checkLetters(){
 }
 
 keyboard_input = (event) => {
-    if (event.keyCode > 64 && event.keyCode < 91 && currentWord.length < 5){
-        enterLetter(event.key);
-    }
-    else if (event.keyCode === 8){
-        removeLetter();
-    }
-    else if (event.keyCode === 13){
-        checkLetters();
+    if (gameOver == false){
+        if (event.keyCode > 64 && event.keyCode < 91 && currentWord.length < 5){
+            enterLetter(event.key);
+        }
+        else if (event.keyCode === 8){
+            removeLetter();
+        }
+        else if (event.keyCode === 13){
+            checkLetters();
+        }
     }
 }
 
