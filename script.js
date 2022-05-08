@@ -9,20 +9,26 @@ var remarks = ["You're too smart!", "Most impressive...", "How intelligent.",
     "Nicely done!", "Not bad.", "Phew..."];
 var remark;
 
-function readTextFile(file) {
+function start() {
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, true);
+    rawFile.open("GET", "words.txt", true);
     rawFile.onreadystatechange = function () {
         if (rawFile.readyState === 4) {
             if (rawFile.status === 200 || rawFile.status == 0) {
                 var allText = rawFile.responseText;
                 words = allText.split("\n");
+                //console.log(words)
+                wordValue = getRandomIntInclusive(0, words.length - 1);
+                word = words[wordValue];
+                answerWord = word;
+                console.log(answerWord)
             }
         }
     }
+
     rawFile.send(null);
 }
-readTextFile("words.txt");
+
 
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
@@ -31,12 +37,14 @@ function getRandomIntInclusive(min, max) {
     //The maximum is inclusive and the minimum is inclusive
 }
 
+/*
 function getRandomWord() {
     wordValue = getRandomIntInclusive(0, words.length - 1);
     word = words[wordValue];
-    console.log(word);
     answerWord = word;
+    return word
 }
+*/
 
 function enterLetter(key) {
     if (currentWord.length < 5) {
@@ -120,4 +128,13 @@ addEventListener("keydown", keyboard_input);
 guesses = 1;
 currentWord = "";
 
-setTimeout((answerWord = getRandomWord()) => { }, 100);
+start()
+/*
+readTextFile.then(
+    answerWord = getRandomWord(),
+    console.log(answerWord)
+);
+*/
+//answerWord = getRandomWord()
+
+//setTimeout((answerWord = getRandomWord()) => { }, 10);
