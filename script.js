@@ -9,7 +9,7 @@ var remarks = ["You're too smart!", "Most impressive...", "How intelligent.",
     "Nicely done!", "Not bad.", "Phew..."];
 var remark;
 
-function start() {
+function getWord() {
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", "words.txt", true);
     rawFile.onreadystatechange = function () {
@@ -17,7 +17,6 @@ function start() {
             if (rawFile.status === 200 || rawFile.status == 0) {
                 var allText = rawFile.responseText;
                 words = allText.split("\n");
-                //console.log(words)
                 wordValue = getRandomIntInclusive(0, words.length - 1);
                 word = words[wordValue];
                 answerWord = word;
@@ -25,7 +24,6 @@ function start() {
             }
         }
     }
-
     rawFile.send(null);
 }
 
@@ -128,13 +126,4 @@ addEventListener("keydown", keyboard_input);
 guesses = 1;
 currentWord = "";
 
-start()
-/*
-readTextFile.then(
-    answerWord = getRandomWord(),
-    console.log(answerWord)
-);
-*/
-//answerWord = getRandomWord()
-
-//setTimeout((answerWord = getRandomWord()) => { }, 10);
+getWord()
