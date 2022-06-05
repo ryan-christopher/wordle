@@ -66,45 +66,34 @@ function removeLetter() {
 }
 
 function checkLetters() {
-    if (currentWord.length === 5) {
-        if (!words.includes(currentWord)) {
-            alert("That word is not in this dictionary, enter a valid word.")
+    if (currentWord === answerWord) {
+        remark = remarks[guesses - 1];
+        setTimeout(() => { alert(remark) }, 1500);
+        gameOver = true;
+    }
+    for (let i = 1; i < 6; i++) {
+        tile = document.getElementById(`${guesses}-${i}`);
+        keyboardLetter = document.getElementById(`${currentWord[i - 1]}`);
+        if (answerWord.includes(currentWord[i - 1]) && answerWord[i - 1] === currentWord[i - 1]) {
+            tile.classList.add("turn-green");
+            keyboardLetter.style.backgroundColor = "green";
+        }
+        else if (answerWord.includes(currentWord[i - 1]) && answerWord[i - 1] != currentWord[i - 1]) {
+            tile.classList.add("turn-yellow");
+            keyboardLetter.style.backgroundColor = "rgb(177, 174, 31)";
         }
         else {
-            if (currentWord === answerWord) {
-                remark = remarks[guesses - 1];
-                setTimeout(() => { alert(remark) }, 1500);
-                gameOver = true;
-            }
-            for (let i = 1; i < 6; i++) {
-                tile = document.getElementById(`${guesses}-${i}`);
-                keyboardLetter = document.getElementById(`${currentWord[i - 1]}`);
-                if (answerWord.includes(currentWord[i - 1]) && answerWord[i - 1] === currentWord[i - 1]) {
-                    tile.classList.add("turn-green");
-                    keyboardLetter.style.backgroundColor = "green";
-                }
-                else if (answerWord.includes(currentWord[i - 1]) && answerWord[i - 1] != currentWord[i - 1]) {
-                    tile.classList.add("turn-yellow");
-                    keyboardLetter.style.backgroundColor = "rgb(177, 174, 31)";
-                }
-                else {
-                    tile.classList.add("turn-black");
-                    keyboardLetter.style.backgroundColor = "black";
-                }
-
-            }
-            guesses += 1;
-            currentWord = "";
-            if (guesses === 7 && gameOver === false) {
-                setTimeout(() => { alert(`${answerWord} \nBetter luck next time.`) }, 1500);
-                gameOver = true;
-            }
+            tile.classList.add("turn-black");
+            keyboardLetter.style.backgroundColor = "black";
         }
-    }
-    else {
-        alert("You need a five letter word.")
-    }
 
+    }
+    guesses += 1;
+    currentWord = "";
+    if (guesses === 7 && gameOver === false) {
+        setTimeout(() => { alert(`${answerWord} \nBetter luck next time.`) }, 1500);
+        gameOver = true;
+    }
 }
 
 keyboard_input = (event) => {
@@ -116,7 +105,12 @@ keyboard_input = (event) => {
             removeLetter();
         }
         else if (event.keyCode === 13) {
-            checkLetters();
+            if (currentWord.length === 5) {
+                wordTest(currentWord)
+            }
+            else {
+                alert("You need a five letter word.")
+            }
         }
     }
 }
@@ -127,3 +121,23 @@ guesses = 1;
 currentWord = "";
 
 getWord()
+
+function wordTest(word) {
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+    fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + word, requestOptions)
+        .then(response => response.json())
+        .then(result => isValidWord(result))
+        .catch(error => console.log('error', error));
+}
+
+function isValidWord(definition) {
+    if (definition.length >= 1) {
+        checkLetters()
+    }
+    else {
+        alert("Please enter a valid word.")
+    }
+}
